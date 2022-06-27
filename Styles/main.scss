@@ -1,0 +1,362 @@
+// Imprted files
+
+@use "../Styles/VM.scss" as *;
+
+// Global 
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $btnsColor;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $headers;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  text-transform: capitalize;
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+}
+
+i,
+a,
+button {
+  cursor: pointer;
+}
+
+.container {
+  margin: auto;
+  padding: 0 1em;
+
+  @include min-mq(800px) {
+    width: 700px;
+    padding: 0;
+  }
+
+  @include min-mq(1200px) {
+    width: 1100px;
+  }
+}
+
+// Components
+
+.header {
+  color: $headers;
+  font-family: 'Poppins', sans-serif;
+}
+
+.regular-btn {
+  padding: 1em 2em;
+  border-radius: 100vh;
+  background-color: $btnsColor;
+  color: white;
+  transition-duration: .5s;
+  text-transform: capitalize;
+  font-weight: 600;
+
+  &:hover {
+    background-color: $btnsHoverColor;
+  }
+}
+
+.fadded-text {
+  color: $headers;
+  opacity: .9;
+}
+
+// header and landing
+
+main {
+
+  background-image: url(../images/bg-hero-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: $sectionsBgDark;
+
+  header {
+    padding: 2em 0;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        height: 20px;
+      }
+
+      button.signin-btn {
+        padding: .5em 1.5em;
+        background-color: white;
+        border-radius: 100vh;
+        text-transform: capitalize;
+        font-size: .8rem;
+        font-weight: 700;
+        box-shadow: 0 0 5px rgb(212, 212, 212);
+        transition-duration: .5s;
+
+        &:hover {
+          color: gray
+        }
+      }
+    }
+  }
+
+  >.container {
+    @include flex-centering;
+    flex-wrap: wrap;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    gap: 5em;
+    text-align: center;
+
+    @include min-mq(1200px) {
+      text-align: left;
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    .text-container {
+      max-width: 450px;
+
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      p.intro {
+        font-size: .8rem;
+        line-height: 25px;
+        font-weight: 600;
+        margin: 3em 0;
+      }
+
+    }
+
+    >img.landing-img {
+      max-width: 450px;
+    }
+  }
+}
+
+// sections
+
+section.sections-container {
+  section {
+    margin-bottom: 4em;
+    margin-top: 4em;
+
+    .section-details {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 4em;
+      padding: 3em 2em;
+      text-align: center;
+      box-shadow: 0 0 10px hsl(210, 14%, 80%);
+      border-radius: 10px;
+
+      img {
+        width: 90%;
+        max-width: 450px;
+      }
+
+      .section-text {
+        >h2 {
+          margin: 2em 0 1em;
+        }
+
+        >p {
+          font-size: .8rem;
+          line-height: 25px;
+          font-weight: 600;
+          max-width: 450px;
+        }
+      }
+
+      @include min-mq(1200px) {
+        text-align: left;
+
+        &:not(.img-reverse) {
+          img {
+            order: 2;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+// Footer
+
+footer {
+  background-color: $headers;
+  position: relative;
+  color: white;
+  margin-top: 15em;
+
+
+  section.ready {
+    position: absolute;
+    left: 50%;
+    top: -150px;
+    @include flex-centering;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 3em 2em;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px hsl(210, 14%, 80%);
+
+    @include max-mq(650px) {
+      width: 85%;
+    }
+  }
+
+  >img {
+    background-color: white;
+  }
+
+  .container {
+    padding: 8em 2em 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+
+
+    p {
+      margin: 1.5em 0;
+      font-size: .8em;
+      line-height: 25px;
+    }
+
+    .contact {
+      width: 350px;
+
+
+      .logo-in-footer {
+
+        img {
+          width: 30px;
+        }
+      }
+
+      .contact-box {
+        margin-bottom: 1em;
+
+        img {
+          width: 15px;
+        }
+      }
+    }
+  }
+
+  .links {
+    width: 350px;
+
+    a {
+      color: white;
+      opacity: .9;
+      display: block;
+      margin-bottom: .7em;
+      transition-duration: .5s;
+      padding: .5em;
+
+      &:hover {
+        background-color: rgb(119, 119, 119);
+      }
+    }
+
+    @include min-mq(700px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: max-content;
+      gap: 1em 5em;
+
+    }
+  }
+
+
+  .social-icons {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      font-size: 1.3rem;
+      padding: .5em;
+      border-radius: 50%;
+      border: 1px solid white;
+      transition-duration: .5s;
+
+      &:hover {
+        &:first-child {
+          color: #5a5aaf9e;
+          border-color: #5a5aaf9e;
+        }
+
+        &:last-child {
+          color: #59c9ff;
+          border-color: #59c9ff;
+        }
+
+        &:nth-child(2) {
+          color: #fd584ced;
+          border-color: #fd584ced;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    width: 100%;
+    text-align: center;
+
+    @include min-mq(1200px) {
+      text-align: right;
+    }
+  }
+
+}
