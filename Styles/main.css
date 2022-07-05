@@ -71,7 +71,7 @@ button {
   font-family: "Poppins", sans-serif;
 }
 
-.regular-btn {
+.regular-link {
   padding: 1em 2em;
   border-radius: 100vh;
   background-color: #ff52bf;
@@ -80,7 +80,7 @@ button {
   text-transform: capitalize;
   font-weight: 600;
 }
-.regular-btn:hover {
+.regular-link:hover {
   background-color: #ff8fd8;
 }
 
@@ -89,24 +89,24 @@ button {
   opacity: 0.9;
 }
 
-main {
+header {
+  position: absolute;
+  width: 100%;
+  padding: 2em 0;
   background-image: url(../images/bg-hero-desktop.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-color: #ebfbff;
 }
-main header {
-  padding: 2em 0;
-}
-main header .container {
+header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-main header .container .logo {
+header .container .logo {
   height: 20px;
 }
-main header .container button.signin-btn {
+header .container a.signin-link {
   padding: 0.5em 1.5em;
   background-color: white;
   border-radius: 100vh;
@@ -116,8 +116,16 @@ main header .container button.signin-btn {
   box-shadow: 0 0 5px #d4d4d4;
   transition-duration: 0.5s;
 }
-main header .container button.signin-btn:hover {
+header .container a.signin-link:hover {
   color: gray;
+}
+
+main {
+  padding-top: 3em;
+  background-image: url(../images/bg-hero-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: #ebfbff;
 }
 main > .container {
   display: flex;
@@ -235,13 +243,16 @@ footer .container p {
 footer .container .contact {
   width: 350px;
 }
-footer .container .contact .logo-in-footer img {
-  width: 30px;
+footer .container .contact svg path:last-child {
+  fill: white;
 }
 footer .container .contact .contact-box {
   margin-bottom: 1em;
 }
-footer .container .contact .contact-box img {
+footer .container .contact .contact-box address {
+  font-style: normal;
+}
+footer .container .contact .contact-box address img {
   width: 15px;
 }
 footer .links {
@@ -275,22 +286,23 @@ footer .social-icons {
   justify-content: center;
   align-items: center;
 }
-footer .social-icons i {
+footer .social-icons a {
   font-size: 1.3rem;
   padding: 0.5em;
   border-radius: 50%;
   border: 1px solid white;
   transition-duration: 0.5s;
+  color: white;
 }
-footer .social-icons i:hover:first-child {
+footer .social-icons a:hover:first-child {
   color: #5a5aaf9e;
   border-color: #5a5aaf9e;
 }
-footer .social-icons i:hover:last-child {
+footer .social-icons a:hover:last-child {
   color: #59c9ff;
   border-color: #59c9ff;
 }
-footer .social-icons i:hover:nth-child(2) {
+footer .social-icons a:hover:nth-child(2) {
   color: #fd584ced;
   border-color: #fd584ced;
 }
