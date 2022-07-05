@@ -98,48 +98,41 @@ button {
 
 // header and landing
 
-header {
-  position: absolute;
-  width: 100%;
-  padding: 2em 0;
+main {
+
   background-image: url(../images/bg-hero-desktop.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-color: $sectionsBgDark;
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  header {
+    padding: 2em 0;
 
-    .logo {
-      height: 20px;
-    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-    a.signin-link {
-      padding: .5em 1.5em;
-      background-color: white;
-      border-radius: 100vh;
-      text-transform: capitalize;
-      font-size: .8rem;
-      font-weight: 700;
-      box-shadow: 0 0 5px rgb(212, 212, 212);
-      transition-duration: .5s;
+      .logo {
+        height: 20px;
+      }
 
-      &:hover {
-        color: gray
+      a.signin-link {
+        padding: .5em 1.5em;
+        background-color: white;
+        border-radius: 100vh;
+        text-transform: capitalize;
+        font-size: .8rem;
+        font-weight: 700;
+        box-shadow: 0 0 5px rgb(212, 212, 212);
+        transition-duration: .5s;
+
+        &:hover {
+          color: gray
+        }
       }
     }
   }
-}
-
-main {
-  padding-top: 3em;
-  background-image: url(../images/bg-hero-desktop.svg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-color: $sectionsBgDark;
-
 
   >.container {
     @include flex-centering;
